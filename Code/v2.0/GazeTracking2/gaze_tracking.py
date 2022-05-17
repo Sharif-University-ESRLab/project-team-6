@@ -1,6 +1,4 @@
 import cv2
-import matplotlib.pyplot as plt
-import math
 import numpy as np
 from picamera.array import PiRGBArray # Generates a 3D RGB array
 from picamera import PiCamera # Provides a Python interface for the RPi Camera Module
