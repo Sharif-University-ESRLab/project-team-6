@@ -1,0 +1,65 @@
+.hand-container {
+    position: relative;
+}
+
+.hand-container img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.hand-container img[data-hand='LEFT'] {
+    transform: scaleX(-1);
+}
+
+.hand-container i {
+    font-size: 35px;
+    position: absolute;
+    bottom: 0;
+    color: #ccc;
+}
+
+.hand-container i.active {
+    color: #9b59b6;
+}
+
+#right-check-icon {
+    right: 340px;
+}
+
+#left-check-icon {
+    left: 340px;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+#title {
+    font-size: 45px;
+    color: #9b59b6;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+
+.blink {
+    animation: blinker 0.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+}
+
+@keyframes blinker {
+    to {
+        opacity: 0;
+    }
+}
+
+.swal-text {
+    text-align: center;
+}
