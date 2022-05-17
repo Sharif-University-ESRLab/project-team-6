@@ -1,4 +1,4 @@
-const camera_capture_duration = 3;
+const camera_capture_duration = 5;
 
 const container = document.querySelector('#overlay')
 const fireworks = new Fireworks(container, { rocketsPoint: 1, particles: 300, explosion: 10, trace: 5 })
@@ -17,7 +17,7 @@ swal({
         location.reload();
     }
 
-    const socket = io("http://localhost:4343", { transports: ['websocket'] })
+    const socket = io("http://192.168.1.102:4343", { transports: ['websocket'] })
 
     socket.on("connect", () => {
         let current_value = camera_capture_duration;
