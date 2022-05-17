@@ -2,7 +2,7 @@ import eventlet
 import socketio
 import time
 import numpy as np
-from GazeTracking.tracker import get_eye_direction
+from GazeTracking2.gaze_tracking import get_eye_direction
 
 sio = socketio.Server(cors_allowed_origins='*')
 app = socketio.WSGIApp(sio)
@@ -16,14 +16,8 @@ def handshake(sid, data):
     print('handshake', data)
     # time.sleep(data['duration'])
     direction, all_result = get_eye_direction(data['duration'])
-
-    d = "" 
-    if direction == "Looking left":
-        d = 'LEFT'
-    elif direction == "Looking right" or direction == "Looking center":
-        d = 'RIGHT'
      
-    sio.emit('result', {'direction': d})
+    sio.emit('result', {'direction': direction})
 
 @sio.event
 def disconnect(sid):
