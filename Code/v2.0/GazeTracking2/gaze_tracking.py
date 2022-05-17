@@ -5,7 +5,7 @@ from picamera import PiCamera # Provides a Python interface for the RPi Camera M
 import time
 
 
-eye_cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
+eye_cascade = cv2.CascadeClassifier("GazeTracking2/haarcascade_eye.xml")
 
 
 def detect_eye_and_direction(face):
@@ -44,6 +44,7 @@ def get_eye_direction(t: int):
     
     for frame in camera.capture_continuous(raw_capture, format="bgr", use_video_port=True):
         image = frame.array
+        print(image.shape, type(image))
 
         dir = detect_eye_and_direction(image)
         directions[dir] = directions.get(dir, 0) + 1
