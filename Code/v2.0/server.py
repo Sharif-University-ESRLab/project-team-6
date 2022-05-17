@@ -19,9 +19,12 @@ def handshake(sid, data):
      
     sio.emit('result', {'direction': direction})
 
+    print("Result sent to game:", direction)
+
 @sio.event
 def disconnect(sid):
     print('disconnect ', sid)
 
 if __name__ == '__main__':
+    print("Server is starting ...")
     eventlet.wsgi.server(eventlet.listen(('', 4343)), app)
