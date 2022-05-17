@@ -22,7 +22,8 @@ def handshake(sid, data):
         d = 'LEFT'
     elif direction == "Looking right" or direction == "Looking center":
         d = 'RIGHT'
-     
+
+    print("Send to Game ...", d)
     sio.emit('result', {'direction': d})
 
 @sio.event
@@ -30,4 +31,5 @@ def disconnect(sid):
     print('disconnect ', sid)
 
 if __name__ == '__main__':
+    print("Server is starting ...")
     eventlet.wsgi.server(eventlet.listen(('', 4343)), app)

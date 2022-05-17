@@ -6,7 +6,7 @@ from picamera.array import PiRGBArray # Generates a 3D RGB array
 from picamera import PiCamera # Provides a Python interface for the RPi Camera Module
 import time
 import cv2
-from gaze_tracking import GazeTracking
+from .gaze_tracking import GazeTracking
 
 gaze = GazeTracking()
 # webcam = cv2.VideoCapture(0)
