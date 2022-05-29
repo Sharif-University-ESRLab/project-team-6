@@ -14,9 +14,9 @@ class GazeDetector:
       self, 
       scale_factor: float = 1.1,
       min_neighbors: int = 70,
-      pupil_blackness_threshold: float = 1.1
+      pupil_blackness_threshold: float = 0.1
     ):
-     self._eye_cascade_classifier: cv2.CascadeClassifier = cv2.CascadeClassifier("haarcascade_eye.xml")
+     self._eye_cascade_classifier = cv2.CascadeClassifier("GazeTracking2/haarcascade_eye.xml")
      self.scale_factor = scale_factor
      self.min_neighbors = min_neighbors
      self.pupil_blackness_threshold = pupil_blackness_threshold
@@ -56,7 +56,7 @@ class GazeTracking:
     self._camera = PiCamera()
     self._camera.resolution = (camera_width, camera_height)
     self._camera.framerate = camera_framerate
-    self.raw_capture = PiRGBArray(self._camera, size=(camera_width, camera_height))
+    self._raw_capture = PiRGBArray(self._camera, size=(camera_width, camera_height))
 
   def get_eye_direction(self, time_to_capture: int):
       start_time = time.time()
