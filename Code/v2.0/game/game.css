@@ -23,11 +23,11 @@
 }
 
 #right-check-icon {
-    right: 340px;
+    left: 43%;
 }
 
 #left-check-icon {
-    left: 340px;
+    right: 41%;
 }
 
 #overlay {

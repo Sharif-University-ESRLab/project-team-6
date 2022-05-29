@@ -17,7 +17,7 @@ swal({
         location.reload();
     }
 
-    const socket = io("http://192.168.1.102:4343", { transports: ['websocket'] })
+    const socket = io(settings.SOCKET_SERVER, { transports: ['websocket'] })
 
     socket.on("connect", () => {
         let current_value = camera_capture_duration;
