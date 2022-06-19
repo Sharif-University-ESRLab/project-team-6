@@ -1,36 +1,36 @@
-.hand-container {
+.hand-container { /* Hands container */
     position: relative;
 }
 
-.hand-container img {
+.hand-container img { /* Hands image */
     width: 100%;
     cursor: pointer;
 }
 
-.hand-container img[data-hand='LEFT'] {
-    transform: scaleX(-1);
+.hand-container img[data-hand='LEFT'] { 
+    transform: scaleX(-1); /* rotate left hand horizontally */
 }
 
-.hand-container i {
+.hand-container i { 
     font-size: 35px;
     position: absolute;
     bottom: 0;
     color: #ccc;
 }
 
-.hand-container i.active {
+.hand-container i.active { /* Chosen hand */
     color: #9b59b6;
 }
 
-#right-check-icon {
+#right-check-icon { /* Right hand check icon */
     left: 43%;
 }
 
-#left-check-icon {
+#left-check-icon { /* Left hand check icon */
     right: 41%;
 }
 
-#overlay {
+#overlay { /* Overlay for firework */
     position: absolute;
     top: 0;
     left: 0;
@@ -40,7 +40,7 @@
     overflow: hidden;
 }
 
-#title {
+#title { /* Title */
     font-size: 45px;
     color: #9b59b6;
     position: absolute;
@@ -50,16 +50,16 @@
     z-index: 9;
 }
 
-.blink {
+.blink { /* Blinking style */
     animation: blinker 0.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;
 }
 
-@keyframes blinker {
+@keyframes blinker { /* Blinker animation */
     to {
         opacity: 0;
     }
 }
 
-.swal-text {
+.swal-text { /* .swal-text style (for swal library) */
     text-align: center;
 }
