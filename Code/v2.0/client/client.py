@@ -16,8 +16,10 @@ def connect():
 
 @sio.event
 def result(data):
+    log_text = f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Direction: {data['direction']}\n"
     with open('directions.log', 'a') as f:
-        f.write(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Direction: {data['direction']}")
+        f.write(log_text)
+    print(log_text, end='')
 
 @sio.event
 def disconnect():
