@@ -27,7 +27,7 @@ def disconnect():
 
 
 def signal_handler(sig, frame):
-    sio.disonnect()
+    sio.disconnect()
     sys.exit(0)
 
 
