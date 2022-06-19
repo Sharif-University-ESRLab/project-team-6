@@ -3,6 +3,8 @@ import socketio
 from datetime import datetime
 import time
 import settings
+import sys
+import signal
 
 
 sio = socketio.Client()
@@ -14,13 +16,20 @@ def connect():
 
 @sio.event
 def result(data):
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Direction: {data['direction']}")
+    with open('directions.log', 'a') as f:
+        f.write(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Direction: {data['direction']}")
 
 @sio.event
 def disconnect():
     print("Disconnected")
 
 
+def signal_handler(sig, frame):
+    sio.disonnect()
+    sys.exit(0)
+
+
+signal.signal(signal.SIGINT, signal_handler)
 
 sio.connect(settings.SOCKET_SERVER)
 duration = 2
