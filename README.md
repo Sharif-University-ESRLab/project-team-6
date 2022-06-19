@@ -1,6 +1,6 @@
 # project-team-6
 
-## Detecting Eyes' Direction with Raspberry Pi
+## Detecting Eyes' Direction with Pi Camera on Raspberry Pi
 
 - Keivan Rezaei
 - Seyed Mohammad Seyed Javadi
