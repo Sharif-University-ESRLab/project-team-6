@@ -6,6 +6,6 @@
 - Seyed Mohammad Seyed Javadi
 - Arman Zarei
 
-A video which shows the performence of the system is uploaded at [this link](https://aparat.com/v/C7T0g).
+A video which shows the performence of the system is uploaded to [this website](https://aparat.com/v/C7T0g).
 
 To figure out more details about the project, please see `Final-Report.pdf` in `/Document/Final-Report/` directory.
