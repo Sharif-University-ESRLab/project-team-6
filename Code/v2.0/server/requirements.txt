@@ -2,4 +2,5 @@ numpy
 cv2
 picamera
 eventlet
-socketio
+socketio==4.6.1
+
