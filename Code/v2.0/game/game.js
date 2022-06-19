@@ -34,6 +34,17 @@ swal({
             $("#title").text(`Pick one ${current_value.toFixed(2)}s`);
         }, 10);
     });
+	
+	socket.on("connect_error", (err) => {
+	  swal({ 
+            title: "Error",
+            text: "Connection refused",
+            icon: "error",
+            button: "Reload",
+        }).then(value => {
+            location.reload()
+        });
+	});
 
     socket.emit("handshake", { duration: camera_capture_duration }) // Handshake with rasberry
 
